@@ -35,7 +35,9 @@
  <logger name="org.apache.hadoop.hive" level="ERROR"/>
  <logger name="org.eclipse.jetty" level="ERROR"/>
  <logger name="org.apache.hadoop.util.NativeCodeLoader" level="ERROR"/>
- <logger name="org.apache.spark" level="INFO"/> <!--set to INFO to show DAG, executor, task information or OFF hides -->
+ <logger name="org.apache.spark" level="OFF"/> 
+ <!--set org.apache.spark to INFO or possibly DEBUG for development to show DAG, executor, 
+ task information. OFF hides verbose spark INFO including sensitive information like passwords. -->
  <logger name="com.datastax.dse" level="INFO"/>
  <logger name="org.apache.cassandra" level="OFF"/>
  <logger name="org.apache.spark.util.logging.FileAppender" level="OFF"/>
@@ -48,11 +50,6 @@
 
  <root level="INFO">
     <appender-ref ref="FILE" />
-    <appender-ref ref="STDOUT" /> <!-- must have this here or you won't see some information that only gets printed to the console -->
- </root>
-  
-
-
-
-  
+    <!--<appender-ref ref="STDOUT" />--> <!-- if you uncomment this line, it sends logging to console and duplicates information in the log file. -->
+ </root>  
 </configuration>
