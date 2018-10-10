@@ -25,7 +25,10 @@ public class LoggingSample
     {
 	   	
 
-	SparkConf conf = new SparkConf().setAppName("LoggerSample");
+	SparkConf conf = new SparkConf()
+			.setAppName("LoggerSample")
+			.setMaster("local[2]") // comment out if not running locally.  
+			;  
     JavaSparkContext sc = new JavaSparkContext(conf);
     
     
