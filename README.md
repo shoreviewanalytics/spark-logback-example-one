@@ -1,5 +1,5 @@
 # sparkjobspecificlogging
-An example of how to do spark job specific logging with logback.
+An example of how to create a Spark job specific log using Logback.  This example is setup to be run on a single node DataStax Enterprise (DSE) cluster with Analytics enabled or a multi-node (DSE) cluster with Analytics enabled.   
 
 To run:
 
